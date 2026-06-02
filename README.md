@@ -62,6 +62,49 @@ mvn clean spring-boot:run
 docker compose up --build
 ```
 
+## How to run
+
+1. Make sure MySQL is running and matches `src/main/resources/application.properties`:
+   - URL: `jdbc:mysql://localhost:3306/walletdb?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC`
+   - Username: `wallet`
+   - Password: `walletpass`
+
+2. Build and run with Maven:
+
+```powershell
+mvn clean package
+java -jar target/wallet-system-1.0.0.jar
+```
+
+If `mvn` is not available on PATH, use your local Maven executable:
+
+```powershell
+& "C:\Users\HP\Downloads\apache-maven-3.9.15-bin (1)\apache-maven-3.9.15\bin\mvn.cmd" clean package
+java -jar target\wallet-system-1.0.0.jar
+```
+
+3. Or run directly with Spring Boot:
+
+```powershell
+mvn clean spring-boot:run
+```
+
+4. Or with Docker Compose:
+
+```powershell
+docker compose up --build
+```
+
+## Verify the running project
+
+If the app is running, use:
+
+```powershell
+python verify_project.py
+```
+
+This will automatically test auth, wallet, and admin endpoints.
+
 ## Default Admin
 
 The app seeds an admin account on startup using environment variables:
