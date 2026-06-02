@@ -1,0 +1,258 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #f3f6ff;
+  color: #0f172a;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #eef2ff;
+}
+
+a {
+  color: #4338ca;
+  text-decoration: none;
+}
+
+button, input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  background: #4338ca;
+  color: #fff;
+}
+
+.topbar .brand a {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.topbar nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.topbar .user-label {
+  color: #e0e7ff;
+}
+
+.link-button {
+  background: transparent;
+  border: none;
+  color: #c7d2fe;
+  padding: 0;
+  text-decoration: underline;
+}
+
+main.content {
+  flex: 1;
+  width: min(1200px, calc(100% - 2rem));
+  margin: 2rem auto;
+}
+
+.panel {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+  padding: 2rem;
+}
+
+.auth-page,
+.notfound-page,
+.dashboard-page {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.auth-page .panel,
+.notfound-page .panel {
+  width: min(480px, 100%);
+}
+
+.auth-page h1,
+.notfound-page h1 {
+  margin-top: 0;
+}
+
+.auth-page form,
+.panel form {
+  display: grid;
+  gap: 1rem;
+}
+
+.auth-page label,
+.panel label {
+  display: grid;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+.auth-page input,
+.panel input,
+.panel textarea {
+  width: 100%;
+  border: 1px solid #dbe4ff;
+  border-radius: 0.75rem;
+  padding: 0.85rem 1rem;
+  font-size: 1rem;
+  background: #f8fafc;
+}
+
+button[type='submit'] {
+  border: none;
+  border-radius: 0.85rem;
+  background: #4338ca;
+  color: #fff;
+  padding: 0.95rem 1.2rem;
+  font-weight: 700;
+}
+
+button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.small-text {
+  font-size: 0.93rem;
+  color: #475569;
+}
+
+.message {
+  margin: 0;
+  padding: 1rem;
+  border-radius: 0.85rem;
+}
+
+.message.error {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.message.success {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.hero-panel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.5rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.hero-panel .balance-card {
+  background: #eef2ff;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  min-width: 220px;
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  color: #6366f1;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+}
+
+.subtitle {
+  margin: 0.5rem 0 0;
+  color: #475569;
+}
+
+.grid-two-columns {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1.3fr 1fr;
+}
+
+.transaction-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+
+.transaction-type {
+  margin: 0 0 0.25rem;
+  font-weight: 700;
+}
+
+.transaction-meta {
+  text-align: right;
+}
+
+.transaction-meta span {
+  display: block;
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+.transaction-meta small {
+  display: block;
+  margin-top: 0.25rem;
+  color: #64748b;
+}
+
+.transaction-meta strong {
+  display: block;
+  margin-top: 0.75rem;
+}
+
+@media (max-width: 900px) {
+  .grid-two-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .topbar nav {
+    width: 100%;
+    justify-content: space-between;
+  }
+  main.content {
+    width: min(100%, calc(100% - 1rem));
+    margin: 1rem auto;
+  }
+}
